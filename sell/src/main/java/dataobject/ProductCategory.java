@@ -14,7 +14,7 @@ import java.util.Date;
 @DynamicUpdate // 仅更新有变化的字段
 @Data // lombok生成getter,setter,tostring
 public class ProductCategory {
-    // 类目id
+    // 类目id,自增类型
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer categoryId;
@@ -29,4 +29,13 @@ public class ProductCategory {
     @Column(name = "create_time",insertable = false, updatable = false,
             columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
     private Date updateTime;
+
+    public ProductCategory() {
+    }
+
+    public ProductCategory(String categoryName, Integer categoryType) {
+        this.categoryName = categoryName;
+        this.categoryType = categoryType;
+    }
+
 }
