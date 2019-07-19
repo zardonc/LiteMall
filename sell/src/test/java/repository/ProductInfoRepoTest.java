@@ -1,5 +1,6 @@
 package repository;
 
+import dataobject.ProductCategory;
 import dataobject.ProductInfo;
 import org.junit.Assert;
 import org.junit.Test;
@@ -42,5 +43,11 @@ public class ProductInfoRepoTest {
     public void findByProductStatus() {
         List<ProductInfo> productInfoList = infoRepo.findByProductStatus(0);
         Assert.assertNotEquals(0,productInfoList.size());
+    }
+
+    @Test
+    public void findOne(){
+        ProductInfo pro1 = infoRepo.findById("123").get();
+        Assert.assertEquals("123",pro1.getProductId());
     }
 }

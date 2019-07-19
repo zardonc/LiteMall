@@ -5,12 +5,14 @@ import enums.ProductStatusEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 import repository.ProductInfoRepo;
 import service.ProductService;
 
 import java.util.List;
 
-public class ProductInfoImpl implements ProductService {
+@Service
+public class ProductInfoServiceImpl implements ProductService {
     @Autowired
     private ProductInfoRepo productInfoRepo;
 
