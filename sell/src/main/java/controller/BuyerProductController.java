@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import service.CategoryService;
 import service.ProductService;
+import utils.ResultVOUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -57,14 +58,7 @@ public class BuyerProductController {
             productVO.setProductInfoVOList(productInfoVOList);
             productVOList.add(productVO);
         }
-
-        ResultVO resultVo = new ResultVO();
-
-        resultVo.setData(productVOList);
-        resultVo.setCode(0);
-        resultVo.setMsg("success");
-
-        return resultVo;
+        return ResultVOUtil.success(productVOList);
     }
 
 }

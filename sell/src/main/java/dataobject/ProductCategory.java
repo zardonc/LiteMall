@@ -11,7 +11,7 @@ import java.util.Date;
  * 表名product_category
  */
 @Entity
-@DynamicUpdate // 仅更新有变化的字段
+@DynamicUpdate // 自动更新有变化的字段
 @Data // lombok生成getter,setter,tostring
 public class ProductCategory {
     // 类目id,自增类型
@@ -26,7 +26,7 @@ public class ProductCategory {
     @Column(name = "create_time",insertable = false, updatable = false,columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Date createTime;
 
-    @Column(name = "create_time",insertable = false, updatable = false,
+    @Column(name = "update_time",insertable = false, updatable = false,
             columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
     private Date updateTime;
 
