@@ -25,8 +25,4 @@ public class OrderDetail {
     private Integer productQuantity;
     // 商品小图
     private String productIcon;
-    // 创建时间
-    private Date createTime;
-    // 更新时间
-    private Date updateTime;
 }

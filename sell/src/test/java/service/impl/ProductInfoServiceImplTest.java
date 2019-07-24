@@ -51,7 +51,7 @@ public class ProductInfoServiceImplTest {
     public void save() {
         ProductInfo pro2 = new ProductInfo();
         pro2.setProductId("123456");
-        pro2.setProductName("一起续1代");
+        pro2.setProductName("产品名1代");
         pro2.setProductPrice(new BigDecimal(6.6));
         pro2.setProductStock(99);
         pro2.setProductDescription("图样图森破");
