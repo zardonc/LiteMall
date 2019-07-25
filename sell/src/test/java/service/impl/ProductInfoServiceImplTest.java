@@ -47,17 +47,16 @@ public class ProductInfoServiceImplTest {
     }
 
     @Test
-    @Transactional
     public void save() {
         ProductInfo pro2 = new ProductInfo();
-        pro2.setProductId("123456");
-        pro2.setProductName("产品名1代");
-        pro2.setProductPrice(new BigDecimal(6.6));
+        pro2.setProductId("124");
+        pro2.setProductName("产品名2代");
+        pro2.setProductPrice(new BigDecimal(6.65));
         pro2.setProductStock(99);
         pro2.setProductDescription("图样图森破");
         pro2.setProductIcon("http://xxxxX.png");
-        pro2.setProductStatus(ProductStatusEnum.DOWN.getCode());
-        pro2.setCategoryType(2);
+        pro2.setProductStatus(ProductStatusEnum.UP.getCode());
+        pro2.setCategoryType(1);
         ProductInfo ans = productInfoService.save(pro2);
         Assert.assertNotNull(ans);
     }

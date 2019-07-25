@@ -16,7 +16,7 @@ public class ProductInfo {
     private String productName;
     // 单价
     private BigDecimal productPrice;
-    // 库存
+    // 库存数量
     private Integer productStock;
     // 描述
     private String productDescription;
