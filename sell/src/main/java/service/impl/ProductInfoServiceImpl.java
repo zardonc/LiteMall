@@ -41,27 +41,32 @@ public class ProductInfoServiceImpl implements ProductService {
     }
 
     @Override
-    public void incrStock(List<CartDTO> cartDTOList) {
-
-    }
-
-    @Override
     @Transactional
-    public void DescStock(List<CartDTO> cartDTOList) {
-
+    public void incrStock(List<CartDTO> cartDTOList) {
         for (CartDTO cartDTO:cartDTOList) {
             ProductInfo productInfo = productInfoRepo.findById(cartDTO.getProductId()).get();
             if(productInfo == null) {
                 throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);
             }
+            Integer result = productInfo.getProductStock() + cartDTO.getProductQuantity();
+            productInfo.setProductStock(result);
+            productInfoRepo.save(productInfo);
+        }
+    }
 
+    @Override
+    @Transactional
+    public void DescStock(List<CartDTO> cartDTOList) {
+        for (CartDTO cartDTO:cartDTOList) {
+            ProductInfo productInfo = productInfoRepo.findById(cartDTO.getProductId()).get();
+            if(productInfo == null) {
+                throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);
+            }
             Integer result = productInfo.getProductStock() - cartDTO.getProductQuantity();
             if(result < 0) {
                 throw new SellException(ResultEnum.PRODUCT_STOCK_ERROR);
             }
-
             productInfo.setProductStock(result);
-
             productInfoRepo.save(productInfo);
         }
     }
