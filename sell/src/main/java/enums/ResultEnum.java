@@ -11,7 +11,8 @@ public enum ResultEnum {
     ORDERDETAIL_NOT_EXIST(13, "订单详情不存在"),
     ORDER_STATUS_ERROR(14, "订单状态异常"),
     ORDER_UPDATE_FAIL(15, "订单更新失败"),
-    CART_EMPTY_ERROR(14,"购物车为空"),
+    CART_EMPTY_ERROR(16,"购物车为空"),
+    ORDER_OWNER_ERROR(17,"订单不存在"),
     ;
     private Integer code;
     private String msg;
