@@ -49,9 +49,9 @@ public class BuyerProductController {
             // 添加商品详情
             List<ProductInfoVO> productInfoVOList = new ArrayList<>();
             for (ProductInfo productInfo : productInfoList) {
-                if(productInfo.getCategoryType().equals(productCategory.getCategoryType())){
+                if (productInfo.getCategoryType().equals(productCategory.getCategoryType())) {
                     ProductInfoVO productInfoVO = new ProductInfoVO();
-                    BeanUtils.copyProperties(productInfo,productInfoVO);
+                    BeanUtils.copyProperties(productInfo, productInfoVO);
                     productInfoVOList.add(productInfoVO);
                 }
             }

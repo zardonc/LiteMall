@@ -9,6 +9,7 @@ import java.util.List;
 
 @Data
 public class OrderDTO {
+    // 订单编号
     private String orderId;
     // 买家姓名
     private String buyerName;
